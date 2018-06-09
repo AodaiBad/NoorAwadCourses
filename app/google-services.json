@@ -1,0 +1,59 @@
+{
+  "project_info": {
+    "project_number": "980861501888",
+    "firebase_url": "https://noorawadcourses.firebaseio.com",
+    "project_id": "noorawadcourses",
+    "storage_bucket": "noorawadcourses.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:980861501888:android:afe095e45fa2f236",
+        "android_client_info": {
+          "package_name": "com.awad.noor.noorawadcourses"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "980861501888-4simrkbllrngio7rr0nfklnudm9arkh8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.awad.noor.noorawadcourses",
+            "certificate_hash": "9bd603c29369108434858e7edbb0b697f9a85fe4"
+          }
+        },
+        {
+          "client_id": "980861501888-7lc2cvk2gii19muo9qognln4voki1utj.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "980861501888-7lc2cvk2gii19muo9qognln4voki1utj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC-qb-1THxMZFcFjKCXBg76PeUP5c9motc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "980861501888-7lc2cvk2gii19muo9qognln4voki1utj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
