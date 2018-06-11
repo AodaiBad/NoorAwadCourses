@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button btnRegister;
     private FirebaseAuth auth;
     private FirebaseUser firebaseUser;
+    private Button btnGuest;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +34,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         etPassword = (EditText) findViewById(R.id.etPassword);
         btnLogIn = (Button) findViewById(R.id.btnLogIn);
         btnRegister = (Button)findViewById(R.id.btnRegister);
+        btnGuest = (Button)findViewById(R.id.btnGuest);
+        btnGuest.setOnClickListener(this);
         btnLogIn.setOnClickListener(this);
         btnRegister.setOnClickListener(this);
         auth = FirebaseAuth.getInstance();
@@ -71,6 +74,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (view== btnRegister){
             Intent intent = new Intent(this,RegisterActivity.class);
             startActivity(intent);
+        }
+
+        if (view == btnGuest){
+            Intent intent2 = new Intent(this,ListOfCoursestoStudents.class);
+            startActivity(intent2);
         }
     }
 }

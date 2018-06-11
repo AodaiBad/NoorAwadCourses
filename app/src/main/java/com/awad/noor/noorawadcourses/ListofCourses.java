@@ -1,6 +1,8 @@
 package com.awad.noor.noorawadcourses;
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -9,6 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.awad.noor.noorawadcourses.data.Course;
 import com.awad.noor.noorawadcourses.data.CourseAdapter;
@@ -19,6 +22,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
+import java.util.List;
 
 public class ListofCourses extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
@@ -35,7 +40,7 @@ public class ListofCourses extends AppCompatActivity implements AdapterView.OnIt
 
         listview = (ListView) findViewById(R.id.listview);
         courseAdapter = new CourseAdapter(this, R.layout.item_course);
-        mAuth=FirebaseAuth.getInstance();
+        mAuth = FirebaseAuth.getInstance();
         listview.setAdapter(courseAdapter);
         readAndListen();
         listview.setOnItemClickListener(this);
@@ -91,6 +96,41 @@ public class ListofCourses extends AppCompatActivity implements AdapterView.OnIt
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        final String[] a = {"DELETE"};
+        final Course c = (Course) parent.getItemAtPosition(position);
+
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(ListofCourses.this);
+        builder.setTitle("Delete");
+        builder.setCancelable(true);
+        builder.setSingleChoiceItems(a, 0, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                Toast.makeText(ListofCourses.this, a[i], Toast.LENGTH_SHORT).show();
+                if (i == 0) {
+                    DatabaseReference reference;
+                    //todo לקבלת קישור למסד הנתונים שלנו
+                    //todo  קישור הינו לשורש של המסד הנתונים
+
+                    reference = FirebaseDatabase.getInstance().getReference();
+                    reference.child("mylist").child(c.getKeyId()).removeValue(new DatabaseReference.CompletionListener() {
+                        @Override
+                        public void onComplete(DatabaseError databaseError, DatabaseReference databaseReference) {
+                            if (databaseError == null) {
+                                Toast.makeText(ListofCourses.this, "delete successful", Toast.LENGTH_SHORT).show();
+                            } else {
+                                Toast.makeText(ListofCourses.this, "delete failed", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    });
+                }
+            }
+
+
+        });
+        AlertDialog dialog = builder.create();
+        dialog.show();
+
 
     }
 }
