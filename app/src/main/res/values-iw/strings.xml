@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">NoorAwadCourses</string>
+    <string name="Password">סיסמה</string>
+    <string name="login">כניסה</string>
+    <string name="signup">הרשמה</string>
+    <string name="subject_of_the_course">מקצוע</string>
+    <string name="price_you_have_to_pay_in_a_month">מחיר</string>
+    <string name="phone_of_the_course_owner">טלפון</string>
+    <string name="days_in_a_month">הימים בחודש</string>
+    <string name="Email1">דואר אלקטרוני</string>
+    <string name="location_of_the_course">איזור</string>
+</resources>

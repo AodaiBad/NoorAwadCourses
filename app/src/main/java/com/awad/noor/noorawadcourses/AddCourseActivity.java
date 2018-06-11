@@ -49,38 +49,45 @@ public class AddCourseActivity extends AppCompatActivity{
 
         double price=Double.parseDouble(stprice);
         int days=Integer.parseInt(stdays);
+        boolean isok=true;
+        if(etPhone.length()==8);
+        {
+
+        }
 
 
-        Course c= new Course();
-        c.setPhone(stPhone);
-        c.setDays(Integer.parseInt(stdays));
-        c.setLocation(stLocation);
-        c.setSubject(stSubject);
-        c.setPrice(Double.parseDouble(stprice));
+        if (isok==true) {
+            Course c= new Course();
+            c.setPhone(stPhone);
+            c.setDays(Integer.parseInt(stdays));
+            c.setLocation(stLocation);
+            c.setSubject(stSubject);
+            c.setPrice(Double.parseDouble(stprice));
 
-        FirebaseAuth auth=FirebaseAuth.getInstance();
-        FirebaseUser user=auth.getCurrentUser();
-        String email=user.getEmail();
-        email=email.replace('.','*');
-        DatabaseReference reference;
-        reference = FirebaseDatabase.getInstance().getReference();
-        c.setEmail(email);
-        String key=reference.child("mylist").push().getKey();
-        c.setKeyId(key);
-        reference.child("mylist").child(key).setValue(c).addOnCompleteListener(new OnCompleteListener<Void>() {
-            @Override
-            public void onComplete(@NonNull Task<Void> task) {
-                if(task.isSuccessful())
-                {
-                    Toast.makeText(AddCourseActivity.this, "Add Course Successful", Toast.LENGTH_SHORT).show();
-                    finish();
+            FirebaseAuth auth=FirebaseAuth.getInstance();
+            FirebaseUser user=auth.getCurrentUser();
+            String email=user.getEmail();
+            email=email.replace('.','*');
+            DatabaseReference reference;
+            reference = FirebaseDatabase.getInstance().getReference();
+            c.setEmail(email);
+            String key=reference.child("mylist").push().getKey();
+            c.setKeyId(key);
+            reference.child("mylist").child(key).setValue(c).addOnCompleteListener(new OnCompleteListener<Void>() {
+                @Override
+                public void onComplete(@NonNull Task<Void> task) {
+                    if(task.isSuccessful())
+                    {
+                        Toast.makeText(AddCourseActivity.this, "Add Course Successful", Toast.LENGTH_SHORT).show();
+                        finish();
+                    }
+                    else
+                    {
+                        Toast.makeText(AddCourseActivity.this, "Add Course Failed", Toast.LENGTH_SHORT).show();
+                    }
                 }
-                else
-                {
-                    Toast.makeText(AddCourseActivity.this, "Add Course Failed", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
+            });
+        }
 
     }
 }

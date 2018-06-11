@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">NoorAwadCourses</string>
+    <string name="Password">رقم سري</string>
+    <string name="days_in_a_month">عدد الايام بالشهر</string>
+    <string name="location_of_the_course">المنطقة</string>
+    <string name="phone_of_the_course_owner">هاتف صاحب الدورة</string>
+    <string name="price_you_have_to_pay_in_a_month">السعر</string>
+    <string name="subject_of_the_course">الموضوع</string>
+    <string name="signup">تسجيل</string>
+    <string name="login">دخول</string>
+    <string name="Email1">بريد الكتروني</string>
+</resources>

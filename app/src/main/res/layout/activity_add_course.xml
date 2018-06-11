@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Phone of the course owner"
+        android:hint="@string/phone_of_the_course_owner"
         android:inputType="phone" />
 
     <EditText
@@ -20,7 +20,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Location of the course"
+        android:hint="@string/location_of_the_course"
         android:inputType="textPersonName" />
 
     <EditText
@@ -28,7 +28,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Subject of the course"
+        android:hint="@string/subject_of_the_course"
         android:inputType="textPersonName" />
 
     <EditText
@@ -36,7 +36,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Days in a month"
+        android:hint="@string/days_in_a_month"
         android:inputType="textPersonName" />
 
     <EditText
@@ -44,7 +44,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Price you have to pay in a month"
+        android:hint="@string/price_you_have_to_pay_in_a_month"
         android:inputType="textPersonName" />
 
 

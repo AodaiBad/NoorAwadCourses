@@ -2,4 +2,11 @@
     <string name="app_name">NoorAwadCourses</string>
     <string name="Email1">Email1</string>
     <string name="Password">Password</string>
+    <string name="location_of_the_course">Location of the course</string>
+    <string name="phone_of_the_course_owner">Phone of the course owner</string>
+    <string name="subject_of_the_course">Subject of the course</string>
+    <string name="days_in_a_month">Days in a month</string>
+    <string name="price_you_have_to_pay_in_a_month">Price you have to pay in a month</string>
+    <string name="signup">SignUp</string>
+    <string name="login">LogIn</string>
 </resources>
