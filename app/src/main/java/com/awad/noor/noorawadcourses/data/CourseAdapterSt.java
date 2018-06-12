@@ -47,59 +47,12 @@ public class CourseAdapterSt extends ArrayAdapter<Course> {
             tvDays.setText(h.getDays() + "");
             tvPrice.setText(h.getPrice() + "");
 
-            btnDel.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    if (v==btnDel)
-                    {
-                        del(h);
-                    }
-                }
-            });
 
             return view;
         }
 
-    private void del ( final Course t)
-    {
-
-        final String[] a = {"DELETE"};
 
 
-        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-        builder.setTitle("Delete");
-        builder.setCancelable(true);
-        builder.setSingleChoiceItems(a, 0, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(final DialogInterface dialogInterface, int i) {
-
-                dialogInterface.dismiss();
-                Toast.makeText(getContext(), a[i], Toast.LENGTH_SHORT).show();
-                if (i == 0) {
-                    DatabaseReference reference;
-                    //todo לקבלת קישור למסד הנתונים שלנו
-                    //todo  קישור הינו לשורש של המסד הנתונים
-
-                    reference = FirebaseDatabase.getInstance().getReference();
-                    reference.child("mylist").child(t.getKeyId()).removeValue(new DatabaseReference.CompletionListener() {
-                        @Override
-                        public void onComplete(DatabaseError databaseError, DatabaseReference databaseReference) {
-                            if (databaseError == null) {
-                                Toast.makeText(getContext(), "delete successful", Toast.LENGTH_SHORT).show();
-
-                            } else {
-                                Toast.makeText(getContext(), "delete failed", Toast.LENGTH_SHORT).show();
-                            }
-                        }
-                    });
-                }
-            }
-
-
-        });
-        AlertDialog dialog = builder.create();
-        dialog.show();
-    }
 
 
 

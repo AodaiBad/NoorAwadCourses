@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import com.awad.noor.noorawadcourses.data.Course;
 import com.awad.noor.noorawadcourses.data.CourseAdapter;
+import com.awad.noor.noorawadcourses.data.CourseAdapterSt;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -29,7 +30,7 @@ public class ListOfCoursestoStudents extends AppCompatActivity {
     private FirebaseUser user;
 
     private ListView listview;
-    private CourseAdapter courseAdapter;
+    private CourseAdapterSt courseAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +38,7 @@ public class ListOfCoursestoStudents extends AppCompatActivity {
         setContentView(R.layout.activity_listof_courses);
 
         listview = (ListView) findViewById(R.id.listview);
-        courseAdapter = new CourseAdapter(this, R.layout.item_course_st);
+        courseAdapter = new CourseAdapterSt(this, R.layout.item_course_st);
         mAuth = FirebaseAuth.getInstance();
         listview.setAdapter(courseAdapter);
         readAndListen();
